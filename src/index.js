@@ -15,7 +15,6 @@ const  reviewList = (state=[], action) => {
         default:
             return state;
     }
-
 }
 
 const reduxStore = createStore(
