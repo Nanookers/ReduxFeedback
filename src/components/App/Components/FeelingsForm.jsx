@@ -2,6 +2,8 @@ import { useHistory } from 'react-router-dom';
 
 function FeelingsForm(){
 
+    const history = useHistory();
+
 
     return(
         <>
