@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import ReviewFeedback from './Components/ReviewFeedback';
 import './App.css';
@@ -8,6 +7,7 @@ import UnderstandingForm from './Components/UnderstandingForm';
 import SupportForm from './Components/SupportForm';
 import CommentsForm from './Components/CommentsForm';
 import HomePage from './Components/HomePage';
+import ReviewComplete from './Components/ReviewComplete'
 
 function App() {
 
@@ -18,6 +18,7 @@ function App() {
         <h4>Don't forget it!</h4>
       </header>
       <Router>
+
         <Route exact path="/">
           <HomePage />
         </Route>
@@ -42,6 +43,9 @@ function App() {
           <ReviewFeedback />
         </Route>
 
+        <Route exact path="/ReviewComplete">
+          <ReviewComplete />
+        </Route>
       </Router>
     </div>
   );

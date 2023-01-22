@@ -32,6 +32,9 @@ const reviewInProgress = (state={}, action) => {
         
         case 'SET_COMMENT':
             return {...state, comments: action.payload}
+        
+        case 'RESET_PAYLOAD':
+            return action.payload
 
         default:
             return state;
