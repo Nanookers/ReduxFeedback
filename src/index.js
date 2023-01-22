@@ -17,9 +17,31 @@ const  reviewList = (state=[], action) => {
     }
 }
 
+
+
+const reviewInProgress = (state={}, action) => {
+    switch (action.type) {
+        case 'SET_FEELING':
+            return {...state, feeling: action.payload}
+        
+        case 'SET_UNDERSTANDING':
+            return {...state, understanding: action.payload}
+        
+        case 'SET_SUPPORT':
+            return {...state, support: action.payload}
+        
+        case 'SET_COMMENT':
+            return {...state, comments: action.payload}
+
+        default:
+            return state;
+    }
+}
+
 const reduxStore = createStore(
     combineReducers({
-        reviewList
+        reviewList,
+        reviewInProgress
     }),
     applyMiddleware(logger)
   );

@@ -1,14 +1,40 @@
 import { useHistory } from 'react-router-dom';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 function SupportForm(){
 
+    const [supportState, setState] = useState(0)
+
+    const dispatch = useDispatch();
+
     const history = useHistory();
 
+    const handleOnSubmit = (event) => {
+        event.preventDefault();
+
+        const newPayload = {
+            type: 'SET_SUPPORT',
+            payload: supportState
+        }
+
+        dispatch(newPayload);
+
+        history.push({
+            pathname: '/CommentsForm',
+            supportState
+        });
+    }
+
     return(
-        <>
-            <button onClick={() => {history.push('/CommentsForm')}}>Next</button>
+        <>  
+            <form onSubmit={handleOnSubmit}>
+            <input onChange={(event) => setState(event.target.value)} ></input>
+                <button type="submit">Next</button>
+            </form>
         </>
     )
+
 
 }
 

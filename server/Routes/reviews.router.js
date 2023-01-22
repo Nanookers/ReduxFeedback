@@ -15,4 +15,22 @@ router.get('/', (req, res) => {
     });
   });
 
+
+router.post('/',  (req, res) => {
+    let newReview = req.body;
+    console.log(req.body);
+    let sqlQuery = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
+                     VALUES ($1, $2, $3, $4);`;
+    
+    let sqlValues = [Number(newReview.feeling), Number(newReview.understanding), Number(newReview.support), newReview.comments];
+    pool.query(sqlQuery, sqlValues)
+      .then(result => {
+        res.sendStatus(201);
+      })
+      .catch(error => {
+        console.log(`Error adding review`, error);
+        res.sendStatus(500);
+      });
+  });
+
 module.exports = router;
