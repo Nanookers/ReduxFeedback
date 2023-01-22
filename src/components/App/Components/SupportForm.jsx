@@ -28,6 +28,7 @@ function SupportForm(){
 
     return(
         <>  
+            <h1>Did you feel supported in today's learning?</h1>
             <form onSubmit={handleOnSubmit}>
             <input onChange={(event) => setState(event.target.value)} ></input>
                 <button type="submit">Next</button>

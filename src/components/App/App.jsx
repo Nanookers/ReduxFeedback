@@ -7,6 +7,7 @@ import FeelingsForm from './Components/FeelingsForm';
 import UnderstandingForm from './Components/UnderstandingForm';
 import SupportForm from './Components/SupportForm';
 import CommentsForm from './Components/CommentsForm';
+import HomePage from './Components/HomePage';
 
 function App() {
 
@@ -17,7 +18,10 @@ function App() {
         <h4>Don't forget it!</h4>
       </header>
       <Router>
-        
+        <Route exact path="/">
+          <HomePage />
+        </Route>
+
         <Route exact path="/FeelingsForm">
           <FeelingsForm />
         </Route>

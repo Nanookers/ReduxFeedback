@@ -30,7 +30,8 @@ function FeelingsForm(){
     return(
         <>  
             <form onSubmit={handleOnSubmit}>
-                <input onChange={(event) => setState(event.target.value)} ></input>
+                <h1>How are you feeling about today's material?</h1>
+                <input  max={5} onChange={(event) => setState(event.target.value)} ></input>
                 <button type="submit">Next</button>
             </form>
         </>

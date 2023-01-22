@@ -27,8 +27,9 @@ function UnderstandingForm(){
 
     return(
         <>  
+            <h1>On a scale of 1 to 5, how well do you understand it?</h1>
             <form onSubmit={handleOnSubmit}>
-            <input onChange={(event) => setState(event.target.value)} ></input>
+            <input onChange={(event) => setState(event.target.value)} required ></input>
                 <button type="submit">Next</button>
             </form>
         </>
