@@ -1,6 +1,8 @@
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Typography, Radio} from '@mui/material';
+
 function FeelingsForm(){
 
     const [feelingState, setState] = useState(0)
@@ -31,7 +33,7 @@ function FeelingsForm(){
         <>  
             <form onSubmit={handleOnSubmit}>
                 <h1>How are you feeling about today's</h1>
-                <input  max={5} onChange={(event) => setState(event.target.value)} ></input>
+                <input onChange={(event) => setState(event.target.value)} required></input>
                 <button type="submit">Next</button>
             </form>
         </>
